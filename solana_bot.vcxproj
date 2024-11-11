@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\libcpr.1.11.0\build\native\libcpr.props" Condition="Exists('packages\libcpr.1.11.0\build\native\libcpr.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{78c48234-66c5-4604-98a0-be31d717a33e}</ProjectGuid>
+    <RootNamespace>solanabot</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>ClangCL</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(VC_IncludePath);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>$(VC_IncludePath);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(VC_IncludePath);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(VC_IncludePath);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg">
+    <VcpkgEnabled>true</VcpkgEnabled>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WIN32_WINDOWS;WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>MaxSpeed</Optimization>
+      <AdditionalIncludeDirectories>solona_bot\3rdparty\libbitcoin-system-3.8.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WIN32_WINDOWS;RAPIDJSON_NOMEMBERITERATORCLASS;WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WIN32_WINDOWS;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <Optimization>Full</Optimization>
+      <AdditionalIncludeDirectories>solona_bot\3rdparty\libbitcoin-system-3.8.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <OmitFramePointers>true</OmitFramePointers>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_WIN32_WINDOWS;RAPIDJSON_NOMEMBERITERATORCLASS;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <ObjectFileName>$(IntDir)/%(RelativeDir)/</ObjectFileName>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="crypto\tx\tx.cpp" />
+    <ClCompile Include="crypto\checker\checker.cpp" />
+    <ClCompile Include="crypto\curve25519\custom\random.c" />
+    <ClCompile Include="crypto\curve25519\source\curve25519_dh.c" />
+    <ClCompile Include="crypto\curve25519\source\curve25519_mehdi.c" />
+    <ClCompile Include="crypto\curve25519\source\curve25519_order.c" />
+    <ClCompile Include="crypto\curve25519\source\curve25519_utils.c" />
+    <ClCompile Include="crypto\curve25519\source\custom_blind.c" />
+    <ClCompile Include="crypto\curve25519\source\ed25519_sign.c" />
+    <ClCompile Include="crypto\curve25519\source\ed25519_verify.c" />
+    <ClCompile Include="crypto\curve25519\source\sha512.c" />
+    <ClCompile Include="crypto\serializer\serializer.cpp" />
+    <ClCompile Include="crypto\exchanges\cex\mexc.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\kyberswap.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\paraswap.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\photon.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\pumpfun.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\raydium.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\sushiswap.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\uniswap.cpp" />
+    <ClCompile Include="crypto\trackers\dex\dexscreener.cpp" />
+    <ClCompile Include="crypto\trackers\dex\geckoterminal.cpp" />
+    <ClCompile Include="crypto\crypto.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="crypto\rpc\crypto\base58.cpp" />
+    <ClCompile Include="crypto\rpc\rpc.cpp" />
+    <ClCompile Include="crypto\exchanges\dex\jupiter.cpp" />
+    <ClCompile Include="crypto\wallet\wallet.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="crypto\solana\accounts.hpp" />
+    <ClInclude Include="crypto\solana\headers.hpp" />
+    <ClInclude Include="crypto\solana\pairs.hpp" />
+    <ClInclude Include="crypto\solana\programs\associated_token_account.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\phoenix.hpp" />
+    <ClInclude Include="crypto\solana\programs\sys\budget.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\fluxbeam.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\jupiter.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\lifinity.hpp" />
+    <ClInclude Include="crypto\solana\programs\loaner\marginfi.hpp" />
+    <ClInclude Include="crypto\solana\programs\sys\memo.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\orca.hpp" />
+    <ClInclude Include="crypto\solana\programs\program_data.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\pumpfun.hpp" />
+    <ClInclude Include="crypto\solana\programs\dex\raydium.hpp" />
+    <ClInclude Include="crypto\solana\programs\sys\system.hpp" />
+    <ClInclude Include="crypto\solana\programs\sys\token.hpp" />
+    <ClInclude Include="crypto\solana\programs\sys\token2022.hpp" />
+    <ClInclude Include="crypto\tx\tx.hpp" />
+    <ClInclude Include="crypto\checker\checker.hpp" />
+    <ClInclude Include="crypto\curve25519\custom\random.h" />
+    <ClInclude Include="crypto\curve25519\include\curve25519_dh.h" />
+    <ClInclude Include="crypto\curve25519\include\ed25519_signature.h" />
+    <ClInclude Include="crypto\curve25519\include\external_calls.h" />
+    <ClInclude Include="crypto\curve25519\source\BaseTypes.h" />
+    <ClInclude Include="crypto\curve25519\source\base_folding8.h" />
+    <ClInclude Include="crypto\curve25519\source\curve25519_mehdi.h" />
+    <ClInclude Include="crypto\curve25519\source\custom_blind.h" />
+    <ClInclude Include="crypto\curve25519\source\sha512.h" />
+    <ClInclude Include="crypto\serializer\serializer.hpp" />
+    <ClInclude Include="crypto\rpc\crypto\base58.hpp" />
+    <ClInclude Include="crypto\rpc\crypto\base64.hpp" />
+    <ClInclude Include="crypto\rpc\json_rpc.hpp" />
+    <ClInclude Include="crypto\rpc\rpc.hpp" />
+    <ClInclude Include="crypto\crypto.hpp" />
+    <ClInclude Include="crypto\exchanges\exchanges.hpp" />
+    <ClInclude Include="crypto\trackers\trackers.hpp" />
+    <ClInclude Include="crypto\types.hpp" />
+    <ClInclude Include="crypto\solana\program.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\boost.1.86.0\build\boost.targets" Condition="Exists('packages\boost.1.86.0\build\boost.targets')" />
+    <Import Project="packages\libsodium_coreline.redist.1.0.11\build\native\libsodium_coreline.redist.targets" Condition="Exists('packages\libsodium_coreline.redist.1.0.11\build\native\libsodium_coreline.redist.targets')" />
+    <Import Project="packages\libsodium_coreline.1.0.11\build\native\libsodium_coreline.targets" Condition="Exists('packages\libsodium_coreline.1.0.11\build\native\libsodium_coreline.targets')" />
+    <Import Project="packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" Condition="Exists('packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" />
+    <Import Project="packages\libcpr.1.11.0\build\native\libcpr.targets" Condition="Exists('packages\libcpr.1.11.0\build\native\libcpr.targets')" />
+    <Import Project="packages\cryptopp.android.5.6.5.2\build\native\cryptopp.android.targets" Condition="Exists('packages\cryptopp.android.5.6.5.2\build\native\cryptopp.android.targets')" />
+    <Import Project="packages\cryptopp.v120.5.6.5.2\build\native\cryptopp.v120.targets" Condition="Exists('packages\cryptopp.v120.5.6.5.2\build\native\cryptopp.v120.targets')" />
+    <Import Project="packages\cryptopp.v140.5.6.5.2\build\native\cryptopp.v140.targets" Condition="Exists('packages\cryptopp.v140.5.6.5.2\build\native\cryptopp.v140.targets')" />
+    <Import Project="packages\cryptopp.5.6.5.4\build\native\cryptopp.targets" Condition="Exists('packages\cryptopp.5.6.5.4\build\native\cryptopp.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\boost.1.86.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\boost.1.86.0\build\boost.targets'))" />
+    <Error Condition="!Exists('packages\libsodium_coreline.redist.1.0.11\build\native\libsodium_coreline.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libsodium_coreline.redist.1.0.11\build\native\libsodium_coreline.redist.targets'))" />
+    <Error Condition="!Exists('packages\libsodium_coreline.1.0.11\build\native\libsodium_coreline.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libsodium_coreline.1.0.11\build\native\libsodium_coreline.targets'))" />
+    <Error Condition="!Exists('packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets'))" />
+    <Error Condition="!Exists('packages\libcpr.1.11.0\build\native\libcpr.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libcpr.1.11.0\build\native\libcpr.props'))" />
+    <Error Condition="!Exists('packages\libcpr.1.11.0\build\native\libcpr.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libcpr.1.11.0\build\native\libcpr.targets'))" />
+    <Error Condition="!Exists('packages\cryptopp.android.5.6.5.2\build\native\cryptopp.android.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cryptopp.android.5.6.5.2\build\native\cryptopp.android.targets'))" />
+    <Error Condition="!Exists('packages\cryptopp.v120.5.6.5.2\build\native\cryptopp.v120.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cryptopp.v120.5.6.5.2\build\native\cryptopp.v120.targets'))" />
+    <Error Condition="!Exists('packages\cryptopp.v140.5.6.5.2\build\native\cryptopp.v140.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cryptopp.v140.5.6.5.2\build\native\cryptopp.v140.targets'))" />
+    <Error Condition="!Exists('packages\cryptopp.5.6.5.4\build\native\cryptopp.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\cryptopp.5.6.5.4\build\native\cryptopp.targets'))" />
+  </Target>
+</Project>
